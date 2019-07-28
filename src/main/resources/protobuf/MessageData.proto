@@ -1,0 +1,21 @@
+syntax = "proto3";//规定protobuf版本
+package com.pinkpig.entity.protobuf;//包路径，生成java文件存放路径
+
+option java_outer_classname = "MessageProto";//java文件类名
+
+//定义消息类型
+message MessageData {
+	SysHeader sysHeader = 1;//定义第1个属性，SysHeader类型
+	bytes content = 2;//定义第2个属性，字节数组类型
+}
+
+message SysHeader {
+	string bizSeqNo = 1;
+	string sysSeqNo = 2;
+	string ip = 3;
+	string userId = 4;
+	int32 version = 5;
+	string channelId = 6;
+	string origSysId = 7;
+	string prevSysId = 8;
+}
